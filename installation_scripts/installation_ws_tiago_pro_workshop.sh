@@ -1,0 +1,80 @@
+#!/bin/bash
+
+# Copyright (c) 2021 PAL Robotics S.L. All rights reserved.
+#
+#  Redistribution and use in source and binary forms, with or without
+#  modification, are permitted provided that the following conditions are met:
+#
+#  1. Redistributions of source code must retain the above copyright notice,
+#  this list of conditions and the following disclaimer.
+#  2. Redistributions in binary form must reproduce the above copyright notice,
+#  this list of conditions and the following disclaimer in the documentation
+#  and/or other materials provided with the distribution.
+#  3. Neither the name of the copyright holder nor the names of its
+#  contributors may be used to endorse or promote products derived from this
+#  software without specific prior written permission.
+#
+#  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
+#  IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+#  TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+#  PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+#  HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+#  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+#  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+#  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+#  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+#  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+#  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+# Destination folder
+WORKSPACE_DIR="$HOME/ws_tiago_pro_workshop/src"
+
+# Create folder if it doesn't exist
+mkdir -p "$WORKSPACE_DIR"
+cd "$WORKSPACE_DIR" || exit
+
+# List of repositories to clone
+REPOS=(
+    "launch_pal"
+    "pal_sea_arm"
+    "pal_pro_gripper"
+    "pal_urdf_utils"
+    "tiago_pro_robot"
+    "tiago_pro_head_robot"
+    "pal_gazebo_worlds"
+    # "pal_gazebo_plugins"
+    "tiago_pro_simulation"
+    "tiago_pro_moveit_config"
+    "pal_sea_arm_moveit_config"
+    "pal_maps"
+    # "navigation_examples"
+    "tiago_pro_navigation"
+)
+
+# Base GitHub URL for PAL Robotics
+BASE_URL="https://github.com/pal-robotics"
+
+# Clone repositories
+for repo in "${REPOS[@]}"; do
+    if [ -d "$repo" ]; then
+        echo "Repository $repo already exists, skipping."
+    else
+        echo "Cloning repository $repo..."
+        git clone "$BASE_URL/$repo.git"
+
+        # If the repo is pal_urdf_utils, checkout humble-devel branch
+        if [ "$repo" == "pal_urdf_utils" ]; then
+            cd "$repo" || continue
+            echo "Checking out branch 'humble-devel' for $repo..."
+            git checkout humble-devel
+            cd ..
+        fi
+    fi
+done
+
+echo
+echo "============================================================"
+echo "  All repositories for TIAGo PRO Navigation and HRI workshop"
+echo "  have been successfully cloned!"
+echo "============================================================"
+echo
