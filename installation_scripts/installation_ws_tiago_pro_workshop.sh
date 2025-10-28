@@ -42,12 +42,10 @@ REPOS=(
     "tiago_pro_robot"
     "tiago_pro_head_robot"
     "pal_gazebo_worlds"
-    # "pal_gazebo_plugins"
     "tiago_pro_simulation"
     "tiago_pro_moveit_config"
     "pal_sea_arm_moveit_config"
     "pal_maps"
-    # "navigation_examples"
     "tiago_pro_navigation"
 )
 
@@ -61,14 +59,6 @@ for repo in "${REPOS[@]}"; do
     else
         echo "Cloning repository $repo..."
         git clone "$BASE_URL/$repo.git"
-
-        # If the repo is pal_urdf_utils, checkout humble-devel branch
-        if [ "$repo" == "pal_urdf_utils" ]; then
-            cd "$repo" || continue
-            echo "Checking out branch 'humble-devel' for $repo..."
-            git checkout humble-devel
-            cd ..
-        fi
     fi
 done
 
