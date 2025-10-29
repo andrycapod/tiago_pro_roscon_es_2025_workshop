@@ -62,6 +62,8 @@ for repo in "${REPOS[@]}"; do
     fi
 done
 
+echo "Installing at $HOME/ws_tiago_pro_workshop/src"
+
 echo
 echo "============================================================"
 echo "  All repositories for TIAGo PRO Navigation and HRI workshop"
