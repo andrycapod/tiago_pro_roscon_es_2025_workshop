@@ -1,9 +1,9 @@
 ## 🧭 Navegación del TIAGo Pro en simulación
 
-En esta sección aprenderás cómo ejecutar la simulación del **TIAGo Pro** con los distintos modos de **navegación y localización**, basados en el stack de **Nav2** y las extensiones desarrolladas por **PAL Robotics**.
+En esta sección aprenderás cómo ejecutar la simulación del **TIAGo Pro** con los distintos modos de **navegación y localización**, basados en el stack de [**Nav2**](https://docs.nav2.org/) y las extensiones desarrolladas por **PAL Robotics**.
 
 Toda la documentación detallada se encuentra disponible en la documentación oficial de PAL Robotics:  
-🔗 [https://docs.pal-robotics.com/25.01/navigation.html](https://docs.pal-robotics.com/25.01/navigation.html)
+🔗 [PAL Navigation](https://docs.pal-robotics.com/25.01/navigation.html)
 
 ---
 
