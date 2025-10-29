@@ -59,3 +59,22 @@ Una vez que el robot esté en modo de navegación autónoma, puedes enviarle goa
 
 Consulta el tutorial oficial de PAL Robotics para aprender cómo definir y enviar goals utilizando las herramientas de Nav2 y RViz:
 🔗 [Goal Navigation Tutorial – Enviar objetivos de navegación](https://docs.pal-robotics.com/25.01/navigation/goal-navigation-tutorial.html#goal-navigation-tutorial)
+
+### ⚙️ 7. Inspección y modificación de parámetros de navegación
+
+Los nodos de Nav2 y SLAM Toolbox utilizan diferentes parámetros que pueden ajustarse según las necesidades del entorno o del comportamiento del robot.
+Estos parámetros se encuentran definidos en los archivos de configuración del paquete:
+Puedes inspecionarlo haciendo un:
+```bash
+cat tiago_pro_workshop/src/omni_base_navigation/omni_base_2dnav/config/nav2_public_sim.yaml
+```
+🔗 [Nav2 y SLAM Toolbox params por TIAGo Pro](https://github.com/pal-robotics/omni_base_navigation/blob/humble-devel/omni_base_2dnav/config/nav_public_sim.yaml)
+
+Puedes inspeccionar o modificar estos archivos para ajustar aspectos como:
+
+- Planificadores globales y locales
+- Parámetros de coste de mapas (costmap)
+- Configuración de AMCL (localización)
+- Configuración de SLAM Toolbox
+
+Tras modificar un archivo de configuración, recuerda recompilar el workspace o reiniciar los nodos de navegación para aplicar los cambios.
