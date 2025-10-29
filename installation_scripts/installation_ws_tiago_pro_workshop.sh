@@ -47,6 +47,7 @@ REPOS=(
     "pal_sea_arm_moveit_config"
     "pal_maps"
     "tiago_pro_navigation"
+    "omni_base_navigation"
 )
 
 # Base GitHub URL for PAL Robotics
