@@ -1,4 +1,4 @@
-# 🦾 Exercise 0: Instalación y Compilación del Workspace
+# 🦾 Instalación y Compilación del Workspace
 
 Este documento describe los pasos necesarios para instalar y compilar el workspace utilizado durante el **TIAGo PRO Navigation and HRI Workshop**.
 
