@@ -1,3 +1,0 @@
-[] add TIAGo Pro slides
-[] add PAL Navigation slides
-[] add PAL HRI slides
