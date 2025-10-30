@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>target_detection_tutorial</name>
+  <version>0.0.0</version>
+  <description>The target_detection_tutorial example.</description>
+  <maintainer email="martina.annicelli@pal-robotics.com">user</maintainer>
+  <license>Apache License 2.0</license>
+  <author email="martina.annicelli@pal-robotics.com">Martina Annicelli</author>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>rclcpp</depend>
+  <depend>rclcpp_lifecycle</depend>
+  <depend>pal_nav2_core</depend>
+  <depend>pluginlib</depend>
+  <depend>tf2_ros</depend>
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+    <target_detection_tutorial plugin="${prefix}/plugins.xml" />
+  </export>
+</package>

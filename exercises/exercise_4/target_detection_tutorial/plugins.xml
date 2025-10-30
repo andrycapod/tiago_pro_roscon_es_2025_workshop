@@ -1,0 +1,7 @@
+<class_libraries>
+    <library path="dummy_target_detector">
+        <class type="target_detection_tutorial::DummyTargetDetector" base_class_type="pal_nav2_core::TargetDetector">
+            <description>Detects a fake target 2mts in front of the robot</description>
+        </class>
+    </library>
+</class_libraries>
