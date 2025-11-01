@@ -1,18 +1,68 @@
-# 🦾 Instalación y Compilación del Workspace
+# 🐳 Exercise 0 — Preparación del Entorno Docker
 
-Este documento describe los pasos necesarios para instalar y compilar el workspace utilizado durante el **TIAGo PRO Navigation and HRI Workshop**.
+Este primer ejercicio explica cómo preparar el entorno de trabajo para el TIAGo PRO Navigation and HRI Workshop utilizando un contenedor Docker preconfigurado.
+El contenedor incluye todas las dependencias necesarias para ejecutar los ejercicios de navegación y HRI.
 
 ---
 
 ## 🧩 Requisitos
 
-Asegúrate de utilizar un entorno basado en **ROS 2 Humble**, por ejemplo, la imagen Docker oficial:
+🧩 Requisitos
+
+- Docker instalado
+👉 [Instrucciones oficiales](https://docs.docker.com/desktop/setup/install/linux/ubuntu/)
+
+- (Opcional) NVIDIA GPU y NVIDIA Container Toolkit
+👉 [Guía de instalación](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html) 
+
+- Sistema operativo Linux con entorno gráfico (soporte X11)
+
+## 🐋 Imagen Docker del Workshop
+
+La imagen oficial del workshio está disponible públicamente en Docker Hub:
 
 ```bash
-docker pull osrf/ros:humble-desktop-full
+docker pull palrobotics/public-roscon-es-2025-humble-public
 ```
 
-También puedes trabajar en tu máquina local si tienes ROS 2 Humble correctamente instalado, aunque esto no te permitirá ejecutar el último ejercicio del workshop.
+Esta imagen contiene:
+
+- ROS 2 Humble completo
+- Stack de navegación de TIAGo PRO
+- Librerías de HRI y Navegacion y herramientas gráficas (RViz, Gazebo, rqt, etc.)
+
+## 🟩 Opción 1 — Con GPU NVIDIA
+
+Si tu sistema dispone de una GPU NVIDIA y tienes instalado el NVIDIA Container Toolkit, ejecuta:
+
+```bash
+xhost +local:root
+
+docker run -it \
+  --gpus all \
+  --net=host \
+  --env="DISPLAY" \
+  --env="QT_X11_NO_MITSHM=1" \
+  --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
+  --volume="$HOME/exchange:/root/exchange:rw" \
+  palrobotics/public-roscon-es-2025-humble-public
+```
+## 🟦 Opción 2 — Sin GPU NVIDIA
+
+Si no dispones de una GPU NVIDIA, puedes ejecutar el contenedor sin soporte gráfico acelerado.
+Aun así podrás seguir los ejercicios, aunque algunas simulaciones podrían ir más lentas.
+
+```bash
+xhost +local:root
+
+docker run -it \
+  --net=host \
+  --env="DISPLAY" \
+  --env="QT_X11_NO_MITSHM=1" \
+  --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
+  --volume="$HOME/exchange:/root/exchange:rw" \
+  palrobotics/public-roscon-es-2025-humble-public
+```
 
 ## ⚙️ Creación del workspace
 
