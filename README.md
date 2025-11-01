@@ -1,4 +1,4 @@
-## TIAGo PRO Navigation and HRI Workshop — ROSCon @ ES 2025
+## TIAGo PRO Navigation and HRI Workshop — ROSCon España 2025
 
 Bienvenido al repositorio oficial del workshop “TIAGo PRO Navigation and HRI”, presentado durante la ROSCon @ ES 2025.
 Este workshop está diseñado para mostrar las capacidades avanzadas del robot TIAGo PRO, así como los frameworks de navegación y de interacción humano-robot (HRI) desarrollados por PAL Robotics.
