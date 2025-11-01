@@ -1,15 +1,16 @@
-# 🧠 Exercise 1 — Lanzar la simulación e inspeccionar TIAGo PRO
+# 🧠 Exercise 1 — Lanzar la simulación e inspeccionar TIAGo Pro
 
-En este primer ejercicio aprenderás a **lanzar la simulación de TIAGo PRO** y a **explorar su estructura interna** usando los comandos básicos de ROS 2.
+En este primer ejercicio aprenderás a **lanzar la simulación de TIAGo Pro** y a **explorar su estructura interna** usando los comandos básicos de ROS 2.
 
 ---
 
-## 🚀 Lanzar la simulación
+## 🚀 1. Lanzar la simulación de TIAGo Pro
 
-Asegúrate de haber compilado correctamente el workspace y de tener todas las dependencias instaladas.
-
-Primero, intenta lanzar la simulación con el comando básico:
-
+Primero, arga el entorno de ROS:
+```bash
+source /opt/ros/humble/setup.bash
+```
+y despues intenta lanzar la simulación con el comando básico 
 ```bash
 ros2 launch tiago_pro_gazebo tiago_pro_gazebo.launch.py
 ```
@@ -27,12 +28,12 @@ Para iniciar correctamente la simulación, añade el argumento `is_public_sim:=T
 ros2 launch tiago_pro_gazebo tiago_pro_gazebo.launch.py is_public_sim:=True
 ```
 
-Esto abrirá Gazebo con el robot TIAGo PRO en un entorno de simulación.
+Esto abrirá Gazebo con el robot TIAGo Pro en un entorno de simulación.
 
 ![TIAGo Pro](../../images/tiago_pro_gazebo.png)
 
 
-### ⚙️ Explorar argumentos disponibles
+### ⚙️ 1.1 Explorar argumentos disponibles
 
 Puedes explorar todas las opciones que acepta el launch file usando:
 ```bash
@@ -66,16 +67,10 @@ ros2 launch tiago_pro_gazebo tiago_pro_gazebo.launch.py is_public_sim:=True arm_
 ⚠️ Atención: No todos los argumentos funcionarán en la simulación pública, porque algunos requieren dependencias adicionales o son funciones premium de PAL Robotics.
 Se recomienda usar solo las combinaciones soportadas para la simulación pública.
 
-## 🔎 Explorar los tópicos de ROS 2
+## 🔎 1.2 Explorar los tópicos de la simulación
 
 Para inspeccionar los datos que el robot publica y recibe, es útil abrir **varios terminales**.  
 Se recomienda usar **Terminator** para abrir múltiples ventanas de terminal de forma simultánea.
-
-Si no tienes Terminator instalado, puedes instalarlo con:
-
-```bash
-sudo apt install terminator -y
-```
 
 Abre Terminator:
 ```bash
@@ -83,7 +78,7 @@ terminator -u
 ```
 
 Divide la ventana en dos paneles (clic derecho → Split Horizontally o Split Vertically).
-En el primer panel, lanza la simulación de TIAGo PRO:
+En el primer panel, lanza la simulación de TIAGo Pro:
 
 ```bash
 ros2 launch tiago_pro_gazebo tiago_pro_gazebo.launch.py is_public_sim:=True

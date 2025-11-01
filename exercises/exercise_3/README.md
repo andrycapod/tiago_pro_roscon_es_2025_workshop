@@ -9,35 +9,25 @@ Toda la documentación detallada se encuentra disponible en la documentación of
 
 ---
 
-### 🧩 1. Instalación de dependencias
+### 🚀 1. Lanzar la simulación con navegación
 
-Antes de iniciar la simulación, instala los paquetes necesarios de **Nav2**, sobre los que se basa el sistema de navegación de PAL Robotics:
-
-```bash
-sudo apt-get update
-sudo apt-get install ros-humble-navigation2*
-sudo apt-get install ros-humble-nav2-bringup*
-```
-Después de la instalación, carga el entorno de ROS:
+Para iniciar la simulación en Gazebo con navegación y localización habilitadas, carga el entorno de ROS:
 ```bash
 source /opt/ros/humble/setup.bash
 ```
-
-### 🚀 2. Lanzar la simulación con navegación
-
-Para iniciar la simulación en Gazebo con navegación y localización habilitadas, utiliza:
+y despues puedes utilizar el comando:
 ```bash
 ros2 launch tiago_pro_gazebo tiago_pro_gazebo.launch.py is_public_sim:=True navigation:=True
 ```
 
-### 🕹️ 3. Teleoperación del robot
+### 🕹️ 2. Teleoperación del robot
 
 Si deseas controlar el robot manualmente con el teclado dentro de la simulación, sigue el siguiente tutorial oficial de PAL Robotics:
 
 🔗 [Teleop Tutorial – Control del robot desde teclado](https://docs.pal-robotics.com/25.01/navigation/teleop-tutorial.html#teleop-tutorial)
 
 
-### 🗺️ 4. Navegación autónoma con SLAM
+### 🗺️ 3. Navegación autónoma con SLAM
 
 Para ejecutar la simulación en modo navegación autónoma + SLAM, utiliza:
 ```bash
@@ -47,7 +37,7 @@ Consulta el tutorial completo sobre mapeado en la documentación oficial:
 
 🔗 [Mapping Tutorial – Creación de mapas con SLAM](https://docs.pal-robotics.com/25.01/navigation/mapping-tutorial.html)
 
-### 📍 5. Localización en un mapa existente
+### 📍 4. Localización en un mapa existente
 
 Si ya dispones de un mapa previamente generado, puedes lanzar la simulación con navegación autónoma y localización activadas:
 
@@ -58,14 +48,14 @@ Tutorial oficial:
 
 🔗 [Localization Tutorial – Uso de un mapa existente](https://docs.pal-robotics.com/25.01/navigation/localization-tutorial.html#localization-tutorial)
 
-### 🎯 6. Enviar un goal en navegación autónoma
+### 🎯 5. Enviar un goal en navegación autónoma
 
 Una vez que el robot esté en modo de navegación autónoma, puedes enviarle goal para que se desplace de manera autónoma hacia ese punto.
 
 Consulta el tutorial oficial de PAL Robotics para aprender cómo definir y enviar goals utilizando las herramientas de Nav2 y RViz:
 🔗 [Goal Navigation Tutorial – Enviar objetivos de navegación](https://docs.pal-robotics.com/25.01/navigation/goal-navigation-tutorial.html#goal-navigation-tutorial)
 
-### ⚙️ 7. Inspección y modificación de parámetros de navegación
+### ⚙️ 6. Inspección y modificación de parámetros de navegación
 
 Los nodos de Nav2 y SLAM Toolbox utilizan diferentes parámetros que pueden ajustarse según las necesidades del entorno o del comportamiento del robot.
 Estos parámetros se encuentran definidos en los archivos de configuración del paquete:
