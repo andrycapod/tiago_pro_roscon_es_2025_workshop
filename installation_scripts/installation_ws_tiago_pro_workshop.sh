@@ -35,18 +35,7 @@ cd "$WORKSPACE_DIR" || exit
 
 # List of repositories to clone
 REPOS=(
-    "launch_pal"
-    "pal_sea_arm"
-    "pal_pro_gripper"
-    "pal_urdf_utils"
-    "tiago_pro_robot"
-    "tiago_pro_head_robot"
     "pal_gazebo_worlds"
-    "tiago_pro_simulation"
-    "tiago_pro_moveit_config"
-    "pal_sea_arm_moveit_config"
-    "pal_maps"
-    "tiago_pro_navigation"
     "omni_base_navigation"
 )
 
