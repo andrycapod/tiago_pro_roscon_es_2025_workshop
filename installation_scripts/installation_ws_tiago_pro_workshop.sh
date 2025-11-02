@@ -53,7 +53,7 @@ for repo in "${REPOS[@]}"; do
     fi
 done
 
-echo "Installing at $HOME/ws_tiago_pro_workshop/src"
+echo "Installing at $HOME/exchange/ws_tiago_pro_workshop/src"
 
 echo
 echo "============================================================"

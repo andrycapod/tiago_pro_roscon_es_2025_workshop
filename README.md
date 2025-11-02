@@ -31,15 +31,20 @@ Las instrucciones detalladas para instalar Docker, descargar la imagen y ejecuta
 
 ### 🚀 Cómo Empezar
 
-Clona este repositorio:
+Primero, crea una carpeta llamada exchange en tu home con tu usuario:
+
+```bash
+mkdir -p ~/exchange
+cd ~/exchange
+```
+Luego, clona el repositorio dentro de esa carpeta:
 
 ```bash
 git clone https://github.com/pal-robotics/roscon-es-2025-workshop-tiago-pro.git
 cd roscon-es-2025-workshop-tiago-pro
 ```
 
-Sigue el ejercicio 0 para preparar el entorno Docker.
-Completa los ejercicios siguientes en orden para desarrollar la aplicación final de Follow Me.
+A continuación, sigue el exercise_0 para preparar el entorno Docker y luego completa los ejercicios en orden para desarrollar la aplicación final Follow Me.
 
 ### 🗂️ Recursos Adicionales
 

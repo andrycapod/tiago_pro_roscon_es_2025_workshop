@@ -31,39 +31,6 @@ Esta imagen contiene:
 - Stack de navegación de TIAGo PRO
 - Librerías de HRI y Navegacion y herramientas gráficas (RViz, Gazebo, rqt, etc.)
 
-## 🟩 Opción 1 — Con GPU NVIDIA
-
-Si tu sistema dispone de una GPU NVIDIA y tienes instalado el NVIDIA Container Toolkit, ejecuta:
-
-```bash
-xhost +local:root
-
-docker run -it \
-  --gpus all \
-  --net=host \
-  --env="DISPLAY" \
-  --env="QT_X11_NO_MITSHM=1" \
-  --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
-  --volume="$HOME/exchange:/root/exchange:rw" \
-  palrobotics/public-roscon-es-2025-humble-public
-```
-## 🟦 Opción 2 — Sin GPU NVIDIA
-
-Si no dispones de una GPU NVIDIA, puedes ejecutar el contenedor sin soporte gráfico acelerado.
-Aun así podrás seguir los ejercicios, aunque algunas simulaciones podrían ir más lentas.
-
-```bash
-xhost +local:root
-
-docker run -it \
-  --net=host \
-  --env="DISPLAY" \
-  --env="QT_X11_NO_MITSHM=1" \
-  --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
-  --volume="$HOME/exchange:/root/exchange:rw" \
-  palrobotics/public-roscon-es-2025-humble-public
-```
-
 ## ⚙️ Creación del workspace
 
 Para crear automáticamente el workspace del workshop y descargar todos los paquetes necesarios, ejecuta el siguiente script incluido en esto repositorio.
@@ -76,21 +43,40 @@ bash installation_ws_tiago_pro_workshop.sh
 El script creará una carpeta llamada:
 
 ```bash
-~/ws_tiago_pro_workshop/src
+~/exchange/ws_tiago_pro_workshop/src
 ```
 
-y dentro de ella descargará todos los paquetes requeridos para ejecutar la simulación de TIAGo PRO.
+y dentro de ella descargará todos los paquetes requeridos para este Workshop.
+
+## 💻 Arranque del contenedor Docker
+
+Una vez creado el workspace, antes de compilarlo, debes iniciar el contenedor Docker preconfigurado. Para ello:
+
+Accede al directorio de pal_docker_utils:
+```bash
+cd ~/exchange/ws_tiago_pro_workshop/src/pal_docker_utils/scripts
+```
+
+Ejecuta el script para iniciar el contenedor:
+```bash
+bash pal_docker.sh -it palrobotics/public-roscon-es-2025-humble-public
+```
+
+Esto arrancará el contenedor con soporte gráfico acelerado (si tienes tarjeta grafica).
+Abre una nueva terminal en Terminator para trabajar con múltiples ventanas, executando:
+```bash
+terminator -u
+```
 
 ## 📦 Instalación de dependencias
-
-Actualiza los paquetes del sistema e instala las dependencias necesarias:
+Después de iniciar el contenedor actualiza los paquetes del sistema e instala las dependencias necesarias:
 ```bash
 sudo apt update && sudo apt upgrade -y
 ```
 
 Luego, dentro del workspace, instala las dependencias ROS 2 que falten utilizando rosdep:
 ```bash
-cd ~/ws_tiago_pro_workshop
+cd ~/exchange/ws_tiago_pro_workshop
 rosdep update
 rosdep install --from-paths src --ignore-src -r -y
 ```
@@ -98,7 +84,7 @@ rosdep install --from-paths src --ignore-src -r -y
 
 Después de instalar las dependencias, compila el workspace con:
 ```bash
-cd ~/ws_tiago_pro_workshop
+source /opt/ros/humble/setup.bash
 colcon build
 ```
 
