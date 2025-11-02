@@ -35,6 +35,7 @@ cd "$WORKSPACE_DIR" || exit
 
 # List of repositories to clone
 REPOS=(
+    "pal_docker_utils"
     "pal_gazebo_worlds"
     "omni_base_navigation"
 )
