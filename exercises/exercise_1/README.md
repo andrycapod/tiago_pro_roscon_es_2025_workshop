@@ -70,12 +70,6 @@ Se recomienda usar solo las combinaciones soportadas para la simulación públic
 ## 🔎 1.2 Explorar los tópicos de la simulación
 
 Para inspeccionar los datos que el robot publica y recibe, es útil abrir **varios terminales**.  
-Se recomienda usar **Terminator** para abrir múltiples ventanas de terminal de forma simultánea.
-
-Abre Terminator:
-```bash
-terminator -u
-```
 
 Divide la ventana en dos paneles (clic derecho → Split Horizontally o Split Vertically).
 En el primer panel, lanza la simulación de TIAGo Pro:
