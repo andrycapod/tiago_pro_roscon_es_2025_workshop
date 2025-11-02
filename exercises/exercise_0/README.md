@@ -50,7 +50,7 @@ y dentro de ella descargará todos los paquetes requeridos para este Workshop.
 
 ## 💻 Arranque del contenedor Docker
 
-Una vez creado el workspace, antes de compilarlo, debes iniciar el contenedor Docker preconfigurado. Para ello:
+Una vez creado el workspace, antes de compilarlo, debes iniciar el contenedor Docker preconfigurado.
 
 Accede al directorio de pal_docker_utils:
 ```bash

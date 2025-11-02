@@ -40,8 +40,8 @@ cd ~/exchange
 Luego, clona el repositorio dentro de esa carpeta:
 
 ```bash
-git clone https://github.com/pal-robotics/roscon-es-2025-workshop-tiago-pro.git
-cd roscon-es-2025-workshop-tiago-pro
+git clone https://github.com/andrycapod/tiago_pro_roscon_es_2025_workshop.git
+cd tiago_pro_roscon_es_2025_workshop
 ```
 
 A continuación, sigue el exercise_0 para preparar el entorno Docker y luego completa los ejercicios en orden para desarrollar la aplicación final Follow Me.
