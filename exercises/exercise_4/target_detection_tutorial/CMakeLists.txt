@@ -12,6 +12,7 @@ find_package(rclcpp_lifecycle REQUIRED)
 find_package(pal_nav2_core REQUIRED)
 find_package(pluginlib REQUIRED)
 find_package(tf2_ros REQUIRED)
+# find_package(hri REQUIRED)
 
 set(dependencies
   rclcpp
@@ -19,6 +20,7 @@ set(dependencies
   pal_nav2_core
   pluginlib
   tf2_ros
+  # hri
 )
 
 add_library(dummy_target_detector SHARED src/dummy_target_detector.cpp)

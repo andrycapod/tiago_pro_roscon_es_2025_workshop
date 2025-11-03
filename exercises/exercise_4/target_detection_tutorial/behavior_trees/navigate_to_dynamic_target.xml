@@ -23,11 +23,11 @@
       <PipelineSequence name="NavigateToDynamicTarget">
         <RateController hz="10.0">
           <Sequence>
-            <TransformPose pose="{goal}" transform="0.0;0.0;0.0;0.0;0.0;0.0;1.0" transformed_pose="{transformed_goal}">
+            <TransformPose pose="{goal}" transform="-1.0.0;0.0;0.0;0.0;0.0;0.0;1.0" transformed_pose="{transformed_goal}">
               <DetectTarget target="0" detector="dummy_target_detector" goal="{goal}"/>
            </TransformPose>
            <ComputePathToPose goal="{transformed_goal}" path="{path}" planner_id="GridBased"/>
-           <TruncatePath distance="0.3" input_path="{path}" output_path="{truncated_path}"/>
+           <TruncatePath distance="0.1" input_path="{path}" output_path="{truncated_path}"/>
           </Sequence>
         </RateController>
         <KeepRunningUntilFailure>
