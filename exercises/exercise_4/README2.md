@@ -1,6 +1,5 @@
 
-# 🧍‍♂️ Demo “Follow Me” — Detección de Objetivos y Seguimiento c
-
+# 🧍‍♂️ Demo “Follow Me” — Detección de Objetivos y Seguimiento
 Este ejercicio muestra cómo preparar la simulación para utilizar el Target Detector Server y ejecutar la demo de seguimiento autónomo de personas u objetos en movimiento (Follow Me).
 El robot TIAGo PRO será capaz de detectar un objetivo (falso o humano) y navegar dinámicamente para seguirlo.
 
@@ -195,3 +194,4 @@ El robot comenzará a seguir al actor (persona simulada).
 
 El robot TIAGo PRO sigue al actor que se mueve por el escenario, utilizando la navegación dinámica y el detector de objetivos humano.
 
+![TIAGo Pro Follow me](../../images/follow_me_tiago_pro.gif)
