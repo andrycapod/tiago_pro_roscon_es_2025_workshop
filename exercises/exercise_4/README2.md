@@ -33,21 +33,28 @@ Abre el archivo del mundo y descomenta el bloque del actor:
 cd ~/exchange/ws_tiago_pro_workshop/src/pal_gazebo_worlds/worlds
 gedit roscon_es_25.world
 ``` 
-Busca esta sección y elimina los comentarios `<!-- -->`:
+Busca esta sección y copia y pega esto:
 ```bash
 <actor name="random_actor">
-  <static>false</static>
-  <pose>5.0 5.0 1.0 0 0 0</pose>
-  <skin>
-    <filename>moonwalk.dae</filename>
-    <scale>1.0</scale>
-  </skin>
-  <animation name="walking">
-    <filename>walk.dae</filename>
-    <scale>1.0</scale>
-    <interpolate_x>true</interpolate_x>
-  </animation>
-  <plugin name="random_actor_plugin" filename="librandom_actor_plugin.so"/>
+      <static>false</static>
+      <skin>
+        <filename>moonwalk.dae</filename>
+        <scale>1.0</scale>
+      </skin>
+      <animation name="walking">
+        <filename>walk.dae</filename>
+        <scale>1.0</scale>
+        <interpolate_x>true</interpolate_x>
+      </animation>
+      <plugin name="random_actor_plugin" filename="librandom_actor_plugin.so">
+        <world_limits>
+          <x_min>-5.0</x_min>
+          <x_max>5.0</x_max>
+          <y_min>-5.0</y_min>
+          <y_max>5.0</y_max>
+        </world_limits>
+        <hri_simulation>true</hri_simulation>
+      </plugin>
 </actor>
 ``` 
 
