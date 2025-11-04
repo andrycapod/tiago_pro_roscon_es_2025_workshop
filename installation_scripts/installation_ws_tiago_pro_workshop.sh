@@ -38,7 +38,6 @@ REPOS=(
     "pal_docker_utils"
     "pal_gazebo_worlds"
     "omni_base_navigation"
-    "pal_gazebo_plugins"
 )
 
 # Base GitHub URL for PAL Robotics
