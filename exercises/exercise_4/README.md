@@ -9,18 +9,6 @@ En este Workshop aprenderás a:
 - Crear tu propio plugin de detección de targets
 - Extenderlo para seguir targets dinámicos (como personas)
 
-
-### 🎯 Detección de Targets
-
-El componente de Detección de Targets es responsable de identificar un objetivo y proporcionar su posición relativa al robot.
-
-En general, cualquier objeto que pueda ser detectado por los sensores del robot puede considerarse un target.
-Algunos ejemplos son:
-
-- Marcadores ArUco
-- Patrones láser 2D
-- Personas
-
 ### 👩‍💻 Lo que haremos hoy
 
 En esta sesión práctica, nos centraremos en:
@@ -33,18 +21,32 @@ En esta sesión práctica, nos centraremos en:
 
 La librería HRI (Human-Robot Interaction) proporciona un conjunto de APIs en ROS 2 para detectar y rastrear personas en el entorno del robot.
 Ofrece interfaces estandarizadas para:
-- Humanos, caras, cuerpos y voces
+- Humanos, caras y cuerpos
 - Sus IDs, posiciones y atributos semánticos (por ejemplo, emoción o atención)
 - Seguimiento y actualización continua de cada persona mientras se mueve
 
 Al utilizar las APIs de HRI, nuestro futuro plugin podrá:
 
 - Consultar la lista actual de personas detectadas
-- Obtener la posición de una persona específica (por ID o por proximidad)
+- Obtener la posición de una persona específica (por ID)
 - Enviar esa posición al Framework de Target Navigation para que el robot pueda seguirla
 
 En otras palabras:
 Nuestro Dummy Detector se convertirá en un Human Detector basado en las APIs de HRI.
+
+
+### 🎯 Detección de Targets
+
+El componente de Detección de Targets es responsable de identificar un objetivo y proporcionar su posición relativa al robot.
+
+En general, cualquier objeto que pueda ser detectado por los sensores del robot puede considerarse un target.
+Algunos ejemplos son:
+
+- Marcadores ArUco
+- Patrones láser 2D
+- Personas 
+- Objectos
+
 
 ### 🚶 Navegación hacia Targets Dinámicos
 
