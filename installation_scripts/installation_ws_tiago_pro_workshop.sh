@@ -27,7 +27,7 @@
 #  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 # Destination folder
-WORKSPACE_DIR="$HOME/ws_tiago_pro_workshop/src"
+WORKSPACE_DIR="$HOME/exchange/ws_tiago_pro_workshop/src"
 
 # Create folder if it doesn't exist
 mkdir -p "$WORKSPACE_DIR"

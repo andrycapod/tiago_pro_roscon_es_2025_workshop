@@ -61,7 +61,7 @@ Los nodos de Nav2 y SLAM Toolbox utilizan diferentes parámetros que pueden ajus
 Estos parámetros se encuentran definidos en los archivos de configuración del paquete:
 Puedes inspecionarlo haciendo un:
 ```bash
-cat tiago_pro_workshop/src/omni_base_navigation/omni_base_2dnav/config/nav2_public_sim.yaml
+cat ~exchange/tiago_pro_workshop/src/omni_base_navigation/omni_base_2dnav/config/nav2_public_sim.yaml
 ```
 
 🔗 [Nav2 y SLAM Toolbox params por TIAGo Pro](https://github.com/pal-robotics/omni_base_navigation/blob/humble-devel/omni_base_2dnav/config/nav_public_sim.yaml)

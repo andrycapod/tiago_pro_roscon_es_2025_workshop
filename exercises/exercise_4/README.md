@@ -53,6 +53,6 @@ El comportamiento de Dynamic Target Navigation permite al robot:
 - Actualizar continuamente la posición de dicho target mientras se mueve
 - Seguirlo en tiempo real
 
-Esto permite comportamientos autónomos de seguimiento de personas u objetos en movimiento.
+### Como Utilizar la Target Navigation 
 
-
+Para utilizar la Target Navigation y el Human Target Detector, sigue las instrucciones del archivo [README2.md](https://github.com/andrycapod/tiago_pro_roscon_es_2025_workshop/blob/master/exercises/exercise_4/README2.md)
