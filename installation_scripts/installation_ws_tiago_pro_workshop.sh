@@ -6,13 +6,13 @@
 #  modification, are permitted provided that the following conditions are met:
 #
 #  1. Redistributions of source code must retain the above copyright notice,
-#  this list of conditions and the following disclaimer.
+#     this list of conditions and the following disclaimer.
 #  2. Redistributions in binary form must reproduce the above copyright notice,
-#  this list of conditions and the following disclaimer in the documentation
-#  and/or other materials provided with the distribution.
+#     this list of conditions and the following disclaimer in the documentation
+#     and/or other materials provided with the distribution.
 #  3. Neither the name of the copyright holder nor the names of its
-#  contributors may be used to endorse or promote products derived from this
-#  software without specific prior written permission.
+#     contributors may be used to endorse or promote products derived from this
+#     software without specific prior written permission.
 #
 #  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
 #  IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
@@ -33,18 +33,17 @@ WORKSPACE_DIR="$HOME/exchange/ws_tiago_pro_workshop/src"
 mkdir -p "$WORKSPACE_DIR"
 cd "$WORKSPACE_DIR" || exit
 
-# List of repositories to clone
+# List of repositories to clone from PAL Robotics
 REPOS=(
     "pal_docker_utils"
     "pal_gazebo_worlds"
     "omni_base_navigation"
-    "pal_gazebo_plugins"
 )
 
 # Base GitHub URL for PAL Robotics
 BASE_URL="https://github.com/pal-robotics"
 
-# Clone repositories
+# Clone repositories from PAL Robotics
 for repo in "${REPOS[@]}"; do
     if [ -d "$repo" ]; then
         echo "Repository $repo already exists, skipping."
@@ -54,8 +53,19 @@ for repo in "${REPOS[@]}"; do
     fi
 done
 
-echo "Installing at $HOME/exchange/ws_tiago_pro_workshop/src"
+# Clone additional package from different repo
+EXTRA_REPO_URL="https://github.com/LorenzoFerriniCodes/pal_gazebo_plugins.git"
+EXTRA_REPO_NAME="pal_gazebo_plugins"
 
+if [ -d "$EXTRA_REPO_NAME" ]; then
+    echo "Repository $EXTRA_REPO_NAME already exists, skipping."
+else
+    echo "Cloning extra repository $EXTRA_REPO_NAME from $EXTRA_REPO_URL..."
+    git clone "$EXTRA_REPO_URL"
+fi
+
+echo
+echo "Installing at $WORKSPACE_DIR"
 echo
 echo "============================================================"
 echo "  All repositories for TIAGo PRO Navigation and HRI workshop"
