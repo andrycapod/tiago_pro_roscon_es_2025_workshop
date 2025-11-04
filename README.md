@@ -10,10 +10,10 @@ Al final del workshop, los participantes crearán una aplicación práctica de �
 
 En este workshop aprenderás a:
 
-- Explorar las capacidades del robot TIAGo PRO en escenarios reales.
-- Comprender y utilizar el stack de navegación basado en Nav2 y Behavior Trees.
+- Explorar las capacidades del robot TIAGo PRO en escenarios simulado y reales.
+- Comprender y utilizar el stack de navegación basado en Nav2.
 - Usar las APIs de HRI de PAL Robotics para detectar y seguir a personas en el entorno.
-- Integrar navegación y HRI en una aplicación completa de “Follow Me”, donde el robot detecta, sigue y mantiene interacción con un humano
+- Integrar navegación y HRI en una aplicación completa de “Follow Me”, donde el robot detecta, sigue y mantiene interacción con un humano.
   
 
 ### ⚙️ Entorno del Workshop
