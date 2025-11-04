@@ -47,6 +47,11 @@ Algunos ejemplos son:
 - Personas 
 - Objectos
 
+Mucho mas informaciones se incontran a los siguientes enlaces a la documentacion oficial:
+
+[Target Navigation](https://docs.pal-robotics.com/25.01/navigation/target-navigation.html)
+[Target Detector Server](https://docs.pal-robotics.com/25.01/navigation/target-detection.html)
+[Target Detector Plugins](https://docs.pal-robotics.com/25.01/navigation/target-detection-plugins.html)
 
 ### 🚶 Navegación hacia Targets Dinámicos
 
