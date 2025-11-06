@@ -76,7 +76,7 @@ gedit ~/exchange/ws_tiago_pro_workshop/src/omni_base_navigation/omni_base_2dnav/
 Añade estas líneas dentro de `bt_navigator`:
 ```bash
 bt_navigator:
-  default_nav_to_pose_bt_xml:: "~/exchange/ws_tiago_pro_workshop/src/target_detection_tutorial/behavior_trees/navigate_to_dynamic_target.xml"
+  default_nav_to_pose_bt_xml: "~/exchange/ws_tiago_pro_workshop/src/target_detection_tutorial/behavior_trees/navigate_to_dynamic_target.xml"
 
   plugin_lib_names:
     - pal_nav2_detect_target_action_bt_node
